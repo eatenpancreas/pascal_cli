@@ -1,0 +1,15 @@
+{
+  "templates": [
+    {
+      "name": "svelte",
+      "link": "https://github.com/eatenpancreas/svelte_ts_template.git",
+      "description": "Svelte template with typescript, and tailwind built in.",
+      "additional_descriptions": [
+        "After cloning:",
+        "Run npm install to install dependencies.",
+        "Run npm run dev to start the dev server.",
+        "Run npm run build to build the project."
+      ]
+    }
+  ]
+}
