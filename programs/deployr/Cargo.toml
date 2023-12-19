@@ -1,0 +1,9 @@
+[package]
+name = "cli_deployr"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+path = "program.rs"
+
+[dependencies]

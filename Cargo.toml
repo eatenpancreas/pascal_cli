@@ -1,10 +1,16 @@
 [package]
-name = "pascal_cli"
-version = "0.1.0"
+name = "pan"
+version = "2.0.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-serde_json = "1.0.107"
-serde = { version = "1.0.188", features = ["serde_derive"] }
+clap = { version = "4.4.11", features = ["derive"] }
+crossterm = "0.27.0"
+
+# Cli programs
+cli_template = { path = "programs/template" }
+cli_deployr = { path = "programs/deployr" }
+cli_hwd = { path = "programs/hwd" }
+cli_ls = { path = "programs/ls" }

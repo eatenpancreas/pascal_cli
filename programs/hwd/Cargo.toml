@@ -1,0 +1,10 @@
+[package]
+
+name = "cli_hwd"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+path = "program.rs"
+
+[dependencies]
