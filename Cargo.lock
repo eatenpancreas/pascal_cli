@@ -117,6 +117,12 @@ checksum = "702fc72eb24e5a1e48ce58027a675bc24edd52096d5397d4aea7c6dd9eca0bd1"
 [[package]]
 name = "cli_deployr"
 version = "1.0.0"
+dependencies = [
+ "clap",
+ "pan_lib",
+ "serde",
+ "serde_json",
+]
 
 [[package]]
 name = "cli_hwd"
@@ -131,6 +137,7 @@ name = "cli_template"
 version = "1.0.0"
 dependencies = [
  "clap",
+ "pan_lib",
  "serde",
  "serde_json",
 ]
@@ -223,6 +230,10 @@ dependencies = [
  "cli_template",
  "crossterm",
 ]
+
+[[package]]
+name = "pan_lib"
+version = "1.0.0"
 
 [[package]]
 name = "parking_lot"

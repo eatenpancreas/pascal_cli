@@ -2,6 +2,7 @@ use std::{env};
 use std::fs::File;
 use std::process::Command;
 use clap::Args;
+use pan_lib::get_local_file;
 
 #[derive(serde::Deserialize)]
 struct Templates {
@@ -18,19 +19,6 @@ struct Template {
     additional_commands: Vec<Vec<String>>,
 }
 
-fn get_templates_file() -> Vec<Template> {
-    let exe = env::current_exe()
-        .expect("Couldn't find current exe");
-    let path = exe.parent()
-        .expect("Couldn't find current exe");
-    let string_path = path.to_str()
-        .expect("Couldn't find current exe, the path may be corrupt");
-    let f = File::open(format!("{}/pan_c/templates.json", string_path))
-        .expect(&*format!("Couldn't find pan_c directory next to executable! at {}", string_path));
-    let t: Templates = serde_json::from_reader(f).unwrap();
-    t.templates
-}
-
 #[derive(Debug, Args)]
 pub struct ProgramArgs {
     /// The name of the template. (ls to list templates)
@@ -42,7 +30,9 @@ pub struct ProgramArgs {
 }
 
 pub fn run(args: ProgramArgs) {
-    let templates= get_templates_file();
+    let t: Templates = serde_json::from_reader(get_local_file("templates.json")).unwrap();
+    let templates= t.templates;
+    
     if args.name == "ls" {
         println!("No template selected");
         println!("For more info, run pan template --help");

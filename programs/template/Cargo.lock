@@ -95,6 +95,7 @@ name = "cli_template"
 version = "1.0.0"
 dependencies = [
  "clap",
+ "pan_lib",
  "serde",
  "serde_json",
 ]
@@ -116,6 +117,10 @@ name = "itoa"
 version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c"
+
+[[package]]
+name = "pan_lib"
+version = "1.0.0"
 
 [[package]]
 name = "proc-macro2"

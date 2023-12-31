@@ -10,7 +10,7 @@ pub enum Program {
     /// Grabs one of the templates from GitHub and initialises it
     Template(cli_template::ProgramArgs),
     /// Deploys a project straight to Linode
-    Deployr,
+    Deployr(cli_deployr::ProgramArgs),
 }
 
 use Program::*;
@@ -20,6 +20,6 @@ pub fn run_program(program: Program) {
         Hwd => cli_hwd::run(),
         Ls => cli_ls::run(),
         Template(args) => cli_template::run(args),
-        Deployr => cli_deployr::run(),
+        Deployr(args) => cli_deployr::run(args),
     }
 }
